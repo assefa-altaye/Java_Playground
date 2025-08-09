@@ -1,4 +1,4 @@
-import java.lang.*;
+//import java.lang.*;
 
 class MyFirst{
     public static void main (String arg[]){

@@ -1,7 +1,7 @@
-import java.lang.*;
+//import java.lang.*;
 import java.util.*;
 public class ReadKeyBoard {
-    public static void main(String arg[]){
+    public static void main(String args[]){
         Scanner sc=new Scanner(System.in);
         int x,y;
         System.out.println("Enter two numbers");
