@@ -1,3 +1,4 @@
+package Udemy_course_challenges;
 //import java.lang.*;
 import java.util.*;
 public class ReadKeyBoard {
