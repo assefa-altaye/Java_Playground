@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Dashboard · ProApp</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app" id="app">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <div class="brand"><i></i> ProApp</div>
+        <nav class="nav">
+          <a href="#" class="active" data-nav="overview">🏠 Overview</a>
+          <a href="#" data-nav="analytics">📊 Analytics</a>
+          <a href="#" data-nav="projects">🗂️ Projects</a>
+          <a href="#" data-nav="settings">⚙️ Settings</a>
+        </nav>
+        <div class="footer">© <span id="year"></span> ProApp</div>
+      </aside>
+
+      <!-- Topbar -->
+      <header class="topbar">
+        <button class="btn icon secondary" id="btn-menu">☰</button>
+        <div class="searchbar">
+          <input
+            class="input"
+            id="search"
+            placeholder="Search projects, tasks, people..."
+          />
+        </div>
+        <div class="actions">
+          <button class="btn icon secondary" id="btn-theme">🌓</button>
+          <button class="btn icon secondary" id="btn-new">➕ New</button>
+          <div class="avatar" id="avatar">U</div>
+          <button class="btn icon secondary" id="btn-logout">⏻</button>
+        </div>
+      </header>
+
+      <!-- Main -->
+      <main class="main">
+        <!-- Overview -->
+        <section id="view-overview">
+          <div class="grid">
+            <div class="card">
+              <h3>Total Revenue</h3>
+              <div class="value" id="kpi-revenue">$0</div>
+              <div class="trend up" id="kpi-revenue-trend">▲ +0%</div>
+            </div>
+            <div class="card">
+              <h3>Active Users</h3>
+              <div class="value" id="kpi-users">0</div>
+              <div class="trend up" id="kpi-users-trend">▲ +0%</div>
+            </div>
+            <div class="card">
+              <h3>Conversion</h3>
+              <div class="value" id="kpi-conv">0%</div>
+              <div class="trend down" id="kpi-conv-trend">▼ 0%</div>
+            </div>
+            <div class="card">
+              <h3>Churn</h3>
+              <div class="value" id="kpi-churn">0%</div>
+              <div class="trend down" id="kpi-churn-trend">▼ 0%</div>
+            </div>
+
+            <div class="card wide">
+              <h3>Revenue (last 12 mo)</h3>
+              <canvas id="rev-chart" height="120"></canvas>
+            </div>
+            <div class="card wide">
+              <h3>Signups (last 12 mo)</h3>
+              <canvas id="signup-chart" height="120"></canvas>
+            </div>
+
+            <div class="card full">
+              <div class="row" style="justify-content: space-between">
+                <h3>Recent Projects</h3>
+                <button class="btn icon secondary" id="btn-export">
+                  ⬇️ Export CSV
+                </button>
+              </div>
+              <table class="table" id="projects-table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Owner</th>
+                    <th>Budget</th>
+                    <th>Status</th>
+                    <th>Updated</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Analytics -->
+        <section id="view-analytics" class="hidden">
+          <div class="grid">
+            <div class="card full">
+              <h3>Funnel</h3>
+              <canvas id="funnel-chart" height="140"></canvas>
+            </div>
+            <div class="card full">
+              <h3>Region Heat (fake)</h3>
+              <canvas id="heat-chart" height="160"></canvas>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="view-projects" class="hidden">
+          <div class="grid">
+            <div class="card">
+              <h3>Create Project</h3>
+              <div class="field">
+                <label class="label">Name</label>
+                <input
+                  class="input"
+                  id="proj-name"
+                  placeholder="Website Redesign"
+                />
+              </div>
+              <div class="field">
+                <label class="label">Budget ($)</label>
+                <input class="input" id="proj-budget" placeholder="15000" />
+              </div>
+              <div class="field">
+                <label class="label">Owner</label>
+                <input class="input" id="proj-owner" placeholder="Alex" />
+              </div>
+              <button class="btn" id="btn-create">Create</button>
+            </div>
+
+            <div class="card full">
+              <h3>All Projects</h3>
+              <table class="table" id="projects-table-2">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Owner</th>
+                    <th>Budget</th>
+                    <th>Status</th>
+                    <th>Updated</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Settings -->
+        <section id="view-settings" class="hidden">
+          <div class="grid">
+            <div class="card">
+              <h3>Appearance</h3>
+              <p class="muted">Toggle theme & layout preferences.</p>
+              <div class="field">
+                <button class="btn" id="btn-toggle-theme">
+                  Toggle Dark/Light
+                </button>
+              </div>
+              <div class="field">
+                <button class="btn secondary" id="btn-collapse-sidebar">
+                  Collapse/Expand Sidebar
+                </button>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>Account</h3>
+              <div class="field">
+                <label class="label">Display name</label>
+                <input class="input" id="acct-name" placeholder="Your name" />
+              </div>
+              <div class="field">
+                <button class="btn" id="btn-save-acct">Save</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- New item modal -->
+    <div class="modal-backdrop" id="new-modal">
+      <div class="modal">
+        <div class="header">
+          <h3>Quick create</h3>
+          <button class="close" data-close>&times;</button>
+        </div>
+        <div class="field">
+          <label class="label">Title</label>
+          <input class="input" id="quick-title" placeholder="Idea title" />
+        </div>
+        <div class="field">
+          <label class="label">Notes</label>
+          <textarea
+            class="input"
+            id="quick-notes"
+            rows="4"
+            placeholder="A short description..."
+          ></textarea>
+        </div>
+        <div class="row" style="justify-content: flex-end; margin-top: 1rem">
+          <button class="btn secondary" data-close>Cancel</button>
+          <button class="btn" id="btn-quick-save" style="width: auto">
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

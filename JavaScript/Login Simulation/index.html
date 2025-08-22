@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sign in · ProApp</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="center">
+    <main class="container-narrow form">
+      <div class="row" style="justify-content: space-between">
+        <h1>Welcome back</h1>
+        <span class="badge">ProApp v1.0</span>
+      </div>
+      <p class="muted">Sign in to access your dashboard.</p>
+
+      <div class="field">
+        <label class="label" for="login-username">Username or Email</label>
+        <input
+          class="input"
+          id="login-username"
+          placeholder="john@doe.com"
+          autocomplete="username"
+        />
+      </div>
+
+      <div class="field">
+        <label class="label" for="login-password">Password</label>
+        <div style="position: relative">
+          <input
+            class="input pass"
+            type="password"
+            id="login-password"
+            placeholder="••••••••"
+            autocomplete="current-password"
+          />
+          <button
+            class="btn icon secondary"
+            id="toggle-login-pass"
+            style="position: absolute; right: 6px; top: 6px"
+          >
+            👁️
+          </button>
+        </div>
+      </div>
+
+      <div class="row space" style="margin-top: 0.5rem">
+        <label class="row" style="gap: 0.5rem">
+          <input type="checkbox" id="remember" />
+          <span class="muted">Remember me</span>
+        </label>
+        <a class="link" href="#" id="forgot-link">Forgot password?</a>
+      </div>
+
+      <div class="field">
+        <button class="btn" id="btn-login">Sign in</button>
+      </div>
+
+      <div class="divider"></div>
+      <p class="muted">
+        New here? <a class="link" href="register.html">Create an account</a>
+      </p>
+    </main>
+
+    <!-- Modal: Forgot password (simulated) -->
+    <div class="modal-backdrop" id="forgot-modal">
+      <div class="modal">
+        <div class="header">
+          <h3>Password reset</h3>
+          <button class="close" data-close>&times;</button>
+        </div>
+        <p class="muted">
+          Enter your account email. We’ll simulate sending a reset link.
+        </p>
+        <div class="field">
+          <label class="label" for="reset-email">Email</label>
+          <input class="input" id="reset-email" placeholder="you@example.com" />
+        </div>
+        <div class="row" style="justify-content: flex-end; margin-top: 1rem">
+          <button class="btn secondary" data-close>Cancel</button>
+          <button class="btn" id="btn-reset" style="width: auto">
+            Send reset link
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

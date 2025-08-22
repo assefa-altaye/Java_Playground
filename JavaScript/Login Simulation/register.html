@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Create account · ProApp</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="center">
+    <main class="container-narrow form">
+      <div class="row" style="justify-content: space-between">
+        <h1>Create account</h1>
+        <span class="badge">Free</span>
+      </div>
+      <p class="muted">Join and get instant access to your dashboard.</p>
+
+      <div class="field">
+        <label class="label" for="reg-name">Full name</label>
+        <input
+          class="input"
+          id="reg-name"
+          placeholder="Jane Doe"
+          autocomplete="name"
+        />
+      </div>
+
+      <div class="field">
+        <label class="label" for="reg-email">Email</label>
+        <input
+          class="input"
+          id="reg-email"
+          placeholder="jane@doe.com"
+          autocomplete="email"
+        />
+      </div>
+
+      <div class="field">
+        <label class="label" for="reg-username">Username</label>
+        <input
+          class="input"
+          id="reg-username"
+          placeholder="janedoe"
+          autocomplete="username"
+        />
+      </div>
+
+      <div class="field">
+        <label class="label" for="reg-password">Password</label>
+        <div style="position: relative">
+          <input
+            class="input pass"
+            type="password"
+            id="reg-password"
+            placeholder="Minimum 8 characters"
+            autocomplete="new-password"
+          />
+          <button
+            class="btn icon secondary"
+            id="toggle-reg-pass"
+            style="position: absolute; right: 6px; top: 6px"
+          >
+            👁️
+          </button>
+        </div>
+        <div class="strength"><i id="pw-strength"></i></div>
+        <small class="muted"
+          >Use at least 8 chars including a number & symbol.</small
+        >
+      </div>
+
+      <div class="field">
+        <button class="btn" id="btn-register">Create account</button>
+      </div>
+
+      <div class="divider"></div>
+      <p class="muted">
+        Already have an account? <a class="link" href="index.html">Sign in</a>
+      </p>
+    </main>
+
+    <div class="toast" id="toast"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
