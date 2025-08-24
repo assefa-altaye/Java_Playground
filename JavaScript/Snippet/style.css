@@ -1,0 +1,133 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0d0d0f;
+  color: #f0f0f0;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background: #0d0d0f;
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nav-links a {
+  margin-left: 1.5rem;
+  color: #cfcff5;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 6rem;
+  gap: 3rem;
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1.2rem;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: #aaa;
+  margin-bottom: 2rem;
+}
+
+/* Code Box */
+.code-box {
+  background: #1e1e2f;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+}
+
+.code-box pre {
+  margin: 0;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.8rem 1.4rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background: #4f46e5;
+  color: white;
+}
+
+.btn.primary:hover {
+  background: #6366f1;
+}
+
+.btn.secondary {
+  border: 1px solid #4f46e5;
+  color: #cfcff5;
+}
+
+.btn.secondary:hover {
+  background: #1a1a2e;
+}
+
+/* Code Card */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.code-card {
+  background: linear-gradient(135deg, #7c3aed, #ec4899, #f97316);
+  padding: 2px;
+  border-radius: 10px;
+}
+
+.code-card pre {
+  background: #1e1e2f;
+  padding: 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: 'Fira Code', monospace;
+  max-width: 420px;
+  overflow-x: auto;
+}

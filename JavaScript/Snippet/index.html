@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Textlight Clone</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Prism.js CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">💻 Textlight</div>
+    <div class="nav-links">
+      <a href="#">Create</a>
+      <a href="#">Changelog</a>
+      <a href="#">Docs</a>
+      <a href="#">GitHub</a>
+      <a href="#">Feedback</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Solved the code<br/>Here is how</h1>
+      <p>
+        A modern pastebin application that lets you generate stunning images of
+        formatted snippets effortlessly. Just paste, style, and share—no setup needed.
+      </p>
+
+      <!-- Example Code Box -->
+      <div class="code-box">
+        <pre><code class="language-js">
+const sum = (a, b) => {
+  return a + b;
+}
+
+// Example usage:
+console.log(sum(3, 5)); // Output: 8
+        </code></pre>
+      </div>
+
+      <div class="buttons">
+        <a href="#" class="btn primary">Get Started →</a>
+        <a href="#" class="btn secondary">What's New?</a>
+      </div>
+    </div>
+
+    <!-- Preview Code Card -->
+    <div class="hero-image">
+      <div class="code-card">
+        <pre><code class="language-js">
+import { useState } from 'react';
+
+export default () => {
+  const [count, setCount] = useState(0);
+
+  const increment = () => setCount(prev => prev + 1);
+
+  return (
+    <div>
+      <h1>Count: { count }</h1>
+      <button onClick={ increment }>Increment</button>
+    </div>
+  );
+}
+        </code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prism.js JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

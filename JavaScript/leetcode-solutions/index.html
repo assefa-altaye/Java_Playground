@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeetCode Solutions</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Prism.js CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet"/>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>LeetCode Problems</h2>
+      <ul>
+        <li><a href="#" onclick="loadProblem('two-sum')">Two Sum</a></li>
+        <li><a href="#" onclick="loadProblem('reverse-string')">Reverse String</a></li>
+        <!-- Add more problems here -->
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Top: Problem description -->
+      <div class="iframe-container">
+        <iframe id="problem-frame" src="problems/two-sum.html"></iframe>
+      </div>
+
+      <!-- Bottom: Solution area with dropdown -->
+      <div class="solution-header">
+        <label for="language-select">Select Language:</label>
+        <select id="language-select" onchange="changeLanguage()">
+          <option value="js">JavaScript</option>
+          <option value="py">Python</option>
+          <option value="cpp">C++</option>
+        </select>
+      </div>
+      <div class="iframe-container">
+        <iframe id="solution-frame" src="solutions/two-sum-js.html"></iframe>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Prism.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
